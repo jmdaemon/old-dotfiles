@@ -24,8 +24,10 @@ fi
 
 export PATH=$PATH:/usr/sbin:$HOME/npm/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/.local/bin:$HOME/.rvm/bin
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
-export LIBVIRT_DEFAULT_URI='qemu:///system'
+#export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
+#export LIBVIRT_DEFAULT_URI='qemu:///system'
+
+export WEECHAT_HOME=$HOME/.cfg/.weechat/
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
