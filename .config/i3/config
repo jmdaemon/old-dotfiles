@@ -33,7 +33,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id emojione-picker
 exec --no-startup-id flameshot
-#exec --no-startup-id $HOME/.local/bin/emojione-picker
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
