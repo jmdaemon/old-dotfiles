@@ -27,7 +27,11 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 #export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 #export LIBVIRT_DEFAULT_URI='qemu:///system'
 
-export WEECHAT_HOME=$HOME/.cfg/.weechat/
+export CFG=$HOME/.cfg/
+export WEECHAT_HOME=$CFG/.weechat/
+export KAGGLE_CONFIG_DIR=$CFG/.kaggle/
+export NPM_CONFIG_USERCONFIG=$CFG/.npm/
+export GNUPGHOME=$CFG/.gnupg/
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
