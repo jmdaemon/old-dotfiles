@@ -110,8 +110,27 @@ plugins=(
 
 )
 
+# Oh-My-Zsh is alright but we can be more powerful without using this also
 # Added in quick hack
 source $ZSH/oh-my-zsh.sh
+
+# Aliases
+## LSD - https://github.com/Peltoche/lsd 
+alias l='ls -l'
+alias ls='lsd'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+# NeoViM
+alias nv='nvim'
+
+# X Server
+alias xclip='xclip -selection c'
+
+# Git Dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 # If colorscheme is gruvbox
 # source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 # source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
