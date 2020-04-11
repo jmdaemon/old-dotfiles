@@ -4,8 +4,7 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
+# the default umask is set in /etc/profile; for setting the umask for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
 # if running bash
@@ -32,6 +31,10 @@ export WEECHAT_HOME=$CFG/.weechat/
 export KAGGLE_CONFIG_DIR=$CFG/.kaggle/
 export NPM_CONFIG_USERCONFIG=$CFG/.npm/
 export GNUPGHOME=$CFG/.gnupg/
+
+# Make every twice as large
+#export GDK_SCALE=2
+#export GDK_DPI_SCALE=0.5
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
