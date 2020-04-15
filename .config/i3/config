@@ -30,9 +30,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-exec --no-startup-id emojione-picker
-exec --no-startup-id flameshot
+#exec --no-startup-id nm-applet
+#exec --no-startup-id emojione-picker
+#exec --no-startup-id flameshot
 #exec --no-startup-id $HOME/.local/bin/emojione-picker
 
 # Use pactl to adjust volume in PulseAudio.
@@ -245,9 +245,9 @@ exec --no-startup-id picom -bc --config ~/.config/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id mpd
 #exec --no-startup-id xrandr --dpi 144 
-exec --no-startup-id xrandr --dpi 240
-exec --no-startup-id /usr/bin/blueman-applet                 # Bluetooth Manager
-exec --no-startup-id xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
+#exec --no-startup-id xrandr --dpi 240
+#exec --no-startup-id /usr/bin/blueman-applet                 # Bluetooth Manager
+#exec --no-startup-id xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
 #exec --no-startup-id discord                                   # Discord
 #exec --no-startup-id rocketchat-desktop                        # Rocket Chat
 #exec --no-startup-id messengerfordesktop                       # Messenger
