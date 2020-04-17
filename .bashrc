@@ -111,11 +111,16 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Aliases
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+# Config
+alias config='/usr/bin/git --git-dir=/home/jmd/.cfg/ --work-tree=/home/jmd'
 
 # Added manually by jmd
 # export PATH="/home/jmd/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
@@ -158,5 +163,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-alias config='/usr/bin/git --git-dir=/home/jmd/.cfg/ --work-tree=/home/jmd'
-alias config='/usr/bin/git --git-dir=/home/jmd/.cfg/ --work-tree=/home/jmd'
