@@ -103,7 +103,7 @@ margin-bottom = 5
 [bar/topbar]
 monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
-height = 25
+height = 24
 offset-x = 0
 offset-y = 0
 radius = 0.0
@@ -132,7 +132,7 @@ padding-right = 5
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Inconsolata Nerd Font:style=Bold:size=12;6
+font-0 = Inconsolata Nerd Font:style=Bold:size=14;6
 
 ;modules-left = i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -147,7 +147,7 @@ tray-detached = true
 
 ;wm-restack = bspwm
 wm-restack = i3
-override-redirect = true
+# override-redirect = true
 
 ;override-redirect = false
 ;override-redirect = true
@@ -162,11 +162,11 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/bottombar]
-monitor = ${env:MONITOR:DVI-D0}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 ;height = 35
 ;height = 40
-height = 25
+height = 24
 ;height = 50
 ;tray-scale = 1.0
 ;tray-maxsize = 1000
@@ -212,7 +212,7 @@ module-margin-left = 2
 module-margin-right = 2
 
 ;font-0 = Inconsolata Nerd Font:style=Bold:size=13;2
-font-0 = Inconsolata Nerd Font:style=Bold:size=12;0
+font-0 = Inconsolata Nerd Font:style=Bold:size=14;0
 ;font-0 = Inconsolata Nerd Font:style=Bold:size=11.5;0
 ;font-0 = Inconsolata Nerd Font:style=Bold:size=10;0
 ;modules-left = weather temperature 
@@ -226,7 +226,9 @@ font-0 = Inconsolata Nerd Font:style=Bold:size=12;0
 ;modules-right = mpd xkeyboard temperature filesystem memory cpu powermenu
 ;modules-right = filesystem memory cpu powermenu
 modules-center = i3
-modules-right = mpd memory cpu 
+# modules-right = mpd memory cpu 
+modules-right = memory cpu 
+
 
 tray-positon = right
 tray-padding = 2
@@ -235,7 +237,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 ;override-redirect = true
 ;wm-restack = i3
-override-redirect = true
+#override-redirect = true
 wm-restack = i3
 
 
