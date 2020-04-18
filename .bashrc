@@ -123,6 +123,15 @@ alias lt='ls --tree'
 # Config
 alias config='/usr/bin/git --git-dir=/home/jmd/.cfg/ --work-tree=/home/jmd'
 
+# GitHub wrapper for Git - https://hub.github.com/
+#alias git=hub
+#alias gpr='git pull-request -m "$(git log -1 --pretty=%B)"'
+#clonefork() {
+#hub clone "$1"
+#cd "${1##*/}"
+#hub fork
+#}
+
 # Added manually by jmd
 # export PATH="/home/jmd/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
 export PATH="$HOME/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
