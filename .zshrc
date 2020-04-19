@@ -130,6 +130,14 @@ alias xclip='xclip -selection c'
 
 # Git Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+cfgm () { 
+    msg=$1
+    config commit -m $msg
+}
+
+
 
 # If colorscheme is gruvbox
 # source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
