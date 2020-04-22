@@ -4,7 +4,8 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-# the default umask is set in /etc/profile; for setting the umask for ssh logins, install and configure the libpam-umask package.
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
 # if running bash
@@ -20,8 +21,14 @@ if [ -d "$HOME/bin" ] ; then
     PATH="/$HOME/bin:$PATH"
 fi
 
+SBIN=/usr/sbin
+NPM=$HOME/npm/bin
+RUST=$HOME/.cargo/bin
+GO=/usr/local/go/bin
+LOCAL=$HOME/.local/bin
+RVM=$HOME/.rvm/bin
 
-export PATH=$PATH:/usr/sbin:$HOME/npm/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/.local/bin:$HOME/.rvm/bin
+export PATH=$PATH:$SBIN:$NPM:$RUST:$GO:$LOCAL:$RVM
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 #export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 #export LIBVIRT_DEFAULT_URI='qemu:///system'
@@ -31,10 +38,6 @@ export WEECHAT_HOME=$CFG/.weechat/
 export KAGGLE_CONFIG_DIR=$CFG/.kaggle/
 export NPM_CONFIG_USERCONFIG=$CFG/.npm/
 export GNUPGHOME=$CFG/.gnupg/
-
-# Make every twice as large
-#export GDK_SCALE=2
-#export GDK_DPI_SCALE=0.5
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
