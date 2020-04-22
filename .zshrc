@@ -132,9 +132,8 @@ alias xclip='xclip -selection c'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-cfgm () { 
-    msg=$1
-    config commit -m $msg
+cmsg () { 
+    config commit $1 $2
 }
 
 
