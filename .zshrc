@@ -46,7 +46,7 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=") "
 
-HISTFILE="$HOME/.zsh_history"
+HISTFILE=$HOME/.history/zsh/arch-laptop
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -129,6 +129,12 @@ alias xclip='xclip -selection c'
 
 # Git Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+cfgm () { 
+    msg=$1
+    config commit -m $msg
+}
 
 # GitHub wrapper for Git - https://hub.github.com/
 #alias git=hub
