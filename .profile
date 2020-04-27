@@ -21,8 +21,14 @@ if [ -d "$HOME/bin" ] ; then
     PATH="/$HOME/bin:$PATH"
 fi
 
+SBIN=/usr/sbin
+NPM=$HOME/npm/bin
+RUST=$HOME/.cargo/bin
+GO=/usr/local/go/bin
+LOCAL=$HOME/.local/bin
+RVM=$HOME/.rvm/bin
 
-export PATH=$PATH:/usr/sbin:$HOME/npm/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/.local/bin:$HOME/.rvm/bin
+export PATH=$PATH:$SBIN:$NPM:$RUST:$GO:$LOCAL:$RVM
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 #export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 #export LIBVIRT_DEFAULT_URI='qemu:///system'
@@ -32,6 +38,9 @@ export WEECHAT_HOME=$CFG/.weechat/
 export KAGGLE_CONFIG_DIR=$CFG/.kaggle/
 export NPM_CONFIG_USERCONFIG=$CFG/.npm/
 export GNUPGHOME=$CFG/.gnupg/
+
+# Histfiles
+export GDBHISTFILE=$HOME/.history/gdb/ubuntu-workstation/.gdb_history
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
