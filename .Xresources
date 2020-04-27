@@ -1,10 +1,10 @@
 !Xft.dpi: 240
-Xft.dpi: 220
+!Xft.dpi: 220
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-rofi.dpi: 156
+!rofi.dpi: 156
 !rofi.theme: solarized-darker
 
 !#--$template: xresources.template
