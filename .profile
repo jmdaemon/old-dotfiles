@@ -39,6 +39,9 @@ export KAGGLE_CONFIG_DIR=$CFG/.kaggle/
 export NPM_CONFIG_USERCONFIG=$CFG/.npm/
 export GNUPGHOME=$CFG/.gnupg/
 
+# Histfiles
+# export GDBHISTFILE=$HOME/.history/gdb/<BRANCH-NAME>
+
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
 
