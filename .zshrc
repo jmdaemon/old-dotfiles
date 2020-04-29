@@ -51,7 +51,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 fpath=(~/config/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+#autoload -Uz compinit && compinit -i
+autoload -Uz compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
