@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-593308026
+skip_global_compinit=1
+ZSH_CACHE_DIR=$HOME/.cache/zsh
+ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -49,6 +54,8 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=") "
 HISTFILE=$HOME/.history/zsh/arch-laptop/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
+
 
 fpath=(~/config/.zsh/completion $fpath)
 #autoload -Uz compinit && compinit -i
