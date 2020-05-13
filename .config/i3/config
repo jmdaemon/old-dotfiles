@@ -33,6 +33,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id emojione-picker
 exec --no-startup-id flameshot
+exec --no-startup-id udiskie -a -t -f thunar
+exec --no-startup-id fcitx -d
+#exec --no-startup-id udiskie
+# exec --no-startup-id udiskie --no-automount
+# exec --no-startup-id udiskie -at -f thunar
+#exec --no-startup-id udiskie -f "/usr/bin/thunar" --automount --tray
+
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
