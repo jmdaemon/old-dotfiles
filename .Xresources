@@ -12,11 +12,11 @@ rofi.dpi: 156
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-! rofi.color-enabled: true
-! rofi.color-window: #510231, #510231, #FF974E
-! rofi.color-normal: #510231, #FEE8DA, #510231, #FF974E, #510231
-! rofi.color-active: #510231, #FEE8DA, #510231, #FF974E, #510231
-! rofi.color-urgent: #510231, #FA6E43, #510231, #FA6E43, #FEE8DA
+ rofi.color-enabled: true
+ rofi.color-window: #510231, #510231, #FF974E
+ rofi.color-normal: #510231, #FEE8DA, #510231, #FF974E, #510231
+ rofi.color-active: #510231, #FEE8DA, #510231, #FF974E, #510231
+ rofi.color-urgent: #510231, #FA6E43, #510231, #FA6E43, #FEE8DA
 
 
 ! black
