@@ -194,7 +194,6 @@ case $HOST in
 esac
 
 source $HOME/.profile
-fortune | cowsay
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

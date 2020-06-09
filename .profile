@@ -41,6 +41,7 @@ export GNUPGHOME=$CFG/.gnupg/
 
 # Histfiles
 export GDBHISTFILE=$HOME/.history/gdb/arch-laptop/.gdb_history
+bash ~/.cfg/tstart/fortunecow
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"

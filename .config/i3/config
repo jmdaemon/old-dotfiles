@@ -31,7 +31,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id emojione-picker
+#exec --no-startup-id emojione-picker
 exec --no-startup-id flameshot
 exec --no-startup-id udiskie -a -t -f thunar
 exec --no-startup-id fcitx -d
@@ -40,6 +40,8 @@ exec --no-startup-id mailspring -b
 # exec --no-startup-id udiskie --no-automount
 # exec --no-startup-id udiskie -at -f thunar
 #exec --no-startup-id udiskie -f "/usr/bin/thunar" --automount --tray
+# For Redshift
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 
 # Use pactl to adjust volume in PulseAudio.
