@@ -7,8 +7,8 @@ export XMODIFIERS=@im=fcitx
 xrdb -merge ~/.Xresources
 xrandr --dpi 240
 
-. ~/.fehbg
 rofi &
 mpd &
 picom -b
 bash ~/.config/polybar/launch.sh
+exec i3

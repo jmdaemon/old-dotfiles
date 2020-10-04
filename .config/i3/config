@@ -250,6 +250,7 @@ bindsym $mod+r mode "resize"
 #exec_always --no-startup-id setxkbmap -model pc105 -option 'grp:win_space_toggle' -layout us,ca -variant ,, 
 #exec_always --no-startup-id setxkbmap -model pc105 -layout us,ca -variant ,, -option 'grp:ctrl_shift_toggle' 'compose:ralt' 
 exec_always --no-startup-id setxkbmap -model pc105 -layout us,ca -variant ,, -option grp:win_space_toggle compose:ralt
+exec_always --no-startup-id sh ~/.fehbg &
 #exec --no-startup-id compton -bc --config ~/.config/compton/config
 exec --no-startup-id picom -bc --config ~/.config/picom/picom.conf
 exec --no-startup-id dunst
