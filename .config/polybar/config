@@ -34,68 +34,6 @@ bottom-background = #00ffffff
 shaded = #15ffffff
 highlight = #D9583C
 
-col9  = #CA407E
-
-colFg        = #E9DDCF
-colBg        = #201D21
-colHighlight = #553035
-colCursor    = #c8c5c8
-colFocus     = #D9583C
-
-colPrimary    = #E57860
-colBackground = #000000
-
-## Bar colors
-
-# Bottom bar
-colBottomBarFg     = #70ffffff
-colBottomBarBg     = #00ffffff 
-colBottomBarShaded = #15ffffff
-
-# Top bar
-colTopBarFg     = #bb000000
-colTopBarBg     = #00ffffff
-colTopBarShaded = #15ffffff
-
-colBarVolume          = #000000
-colBarVolumeMax       = #000000
-colBarVolumeMute      = #000000
-colBarVolumeIndicator = #000000
-
-colBarBrightness          = #000000
-colBarBrightnessIndicator = #000000
-
-;colBarBatteryWarn = *color9
-colBarBatteryWarn = #CA407E 
-
-;bgTerminal    = rgba(32, 29, 33, 0.9)
-bgTerminal    = #201d21
-hiTerminal    = #553035
-
-;bgFocused     = *colorPrimary
-;bFocused      = *colorPrimary
-bgFocused     = #E57860
-bFocused      = #E57860
-tFocused      = #FFFFFF
-
-bgUnfocused   = #333333
-bUnfocused    = #222222
-tUnfocused    = #888888
-
-bgInactive    = #222222
-bInactive     = #5F676A
-tInactive     = #FFFFFF
-
-bgUrgent      = #222222
-bUrgent       = #900000
-tUrgent       = #FFFFFF
-
-bgPlaceholder = #000000
-bPlaceholder  = #0C0C0C
-tPlaceholder  = #FFFFFF
-
-colTest       = #FF0000
-
 [global/wm]
 margin-top = 5
 margin-bottom = 5
@@ -210,12 +148,8 @@ module-margin-right = 2
 
 ;font-0 = Inconsolata Nerd Font:style=Bold:size=13;2
 font-0 = Inconsolata Nerd Font:style=Bold:size=12;0
-;font-0 = Inconsolata Nerd Font:style=Bold:size=11.5;0
-;font-0 = Inconsolata Nerd Font:style=Bold:size=10;0
 ;modules-left = weather temperature 
-;modules-left = temperature 
 ;modules-left = openweathermap-detailed temperature 
-;modules-left = weather temperature 
 modules-left = weather
 ;modules-left = temperature mpd
 ;modules-right = mpd
@@ -663,7 +597,7 @@ exec = ~/.config/polybar/weather
 
 [module/openweathermap-detailed]
 type = custom/script
-exec = ~/.config/polybar/openweathermap-detailed.sh
+exec = ~/.cfg/scripts/openweathermap-detailed.sh/
 interval = 600
 label-font = 3
 

@@ -18,7 +18,8 @@ endif
 "endif 
 " Vundle Plugin
 " Plug 'VundleVim/Vundle.vim'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " call plug#begin('~/.config/nvim/init.vim')
 
 
@@ -29,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 "    endif
 "endfunction
 " # NeoViM Plugins
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neomake/neomake'
@@ -39,21 +40,19 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'py' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'numkil/ag.nvim'
-" Plug 'altercation/solarized'
-" Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-abolish'
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'SirVer/ultisnips'   " Track the engine.
+Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them: 
 Plug 'lervag/vimtex'
 Plug 'gruvbox-community/gruvbox'
 Plug 'chrisbra/unicode.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tomasr/molokai'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'jph00/swift-apple', { 'for': 'swift' }
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-indentwise'
@@ -302,3 +301,6 @@ let g:vimtex_view_general_options_latexmk = '--unique'
 
 " MarkdownPreview
 let g:mkdp_auto_start = 1
+
+" Vimtex
+let g:tex_flavor = 'latex'
