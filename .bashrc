@@ -118,6 +118,7 @@ fi
 #export PATH="$HOME/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
 source $HOME/.cfg/scripts/tstart/hidpi.sh
 source $HOME/.profile
+source $HOME/.cfg/scripts/tstart/sdkman.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"

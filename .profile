@@ -32,7 +32,8 @@ GO=/usr/local/go/bin
 LOCAL=$HOME/.local/bin
 RVM=$HOME/.rvm/bin
 
-export CARGO_HOME="$XDG_DATA_HOME"/cargo # Languages
+# Languages
+export CARGO_HOME="$XDG_DATA_HOME"/cargo 
 export GOPATH="$XDG_DATA_HOME"/go 
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem   
@@ -56,9 +57,17 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME"/docker-machine
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default 
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+
+
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 export PATH=$PATH:$SBIN:$NPM:$RUST:$GO:$LOCAL:$RVM
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+OPENJDK_8=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
 
 export CFG=$HOME/.cfg/
 export WEECHAT_HOME=$CFG/.weechat/
@@ -68,9 +77,12 @@ export GNUPGHOME=$CFG/.gnupg
 #export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 #export LIBVIRT_DEFAULT_URI='qemu:///system'
 
-source $HOME/.cfg/scripts/aliases/shared.sh
-source $HOME/.cfg/scripts/aliases/nvidia.sh
-source $HOME/.cfg/scripts/aliases/pacman.sh
+ALIAS="$HOME/.cfg/scripts/aliases"
+
+source $ALIAS/shared.sh
+source $ALIAS/nvidia.sh
+source $ALIAS/pacman.sh
+source $ALIAS/school.sh
 source $HOME/.cfg/scripts/tstart/fortunecow.sh
 
 #export GOPATH="$HOME/workspace/go_projects"

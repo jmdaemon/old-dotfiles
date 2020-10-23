@@ -100,9 +100,10 @@ source $HOME/.cfg/scripts/aliases/aliases.zsh
 source $HOME/.cfg/scripts/tstart/hidpi.sh
 source $HOME/.profile
 source $HOME/.cfg/scripts/tstart/conda-init.sh
+source $HOME/.cfg/scripts/tstart/sdkman.sh
 
 # Persistent Tmux Sessions
 #if [ $(tty) == /dev/tty1 ]; then
 #  /usr/bin/tmux new -s 0
 #  /usr/bin/tmux attach -t 0
-#fi
+#fi 
