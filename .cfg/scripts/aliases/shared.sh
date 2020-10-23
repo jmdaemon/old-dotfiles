@@ -46,3 +46,5 @@ alias gfast="cd $HOME/git/fastprogress"
 
 alias gts="cd $HOME/workspace/School/" 
 alias gtws="cd $HOME/workspace"
+
+alias updnvm="bash ~/.cfg/scripts/autorun/vim-plug-update.sh"
