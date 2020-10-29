@@ -71,7 +71,8 @@ export UPDATE_ZSH_DAYS=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git )
+plugins=( git gradle-completion )
+#plugins+=(gradle-completion)
 
 # Added in quick hack
 source $ZSH/oh-my-zsh.sh
