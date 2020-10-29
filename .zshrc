@@ -3,8 +3,7 @@
 
 export ZDOTDIR=$HOME/.config/zsh
 
-# https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-593308026
-skip_global_compinit=1
+# https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-593308026 skip_global_compinit=1
 ZSH_CACHE_DIR=$HOME/.cache/zsh
 ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
 
@@ -101,7 +100,6 @@ source $ZSH/oh-my-zsh.sh
 #
 
 source $HOME/.cfg/scripts/aliases/aliases.zsh
-source $HOME/.cfg/scripts/tstart/hidpi.sh
 source $HOME/.profile
 source $HOME/.cfg/scripts/tstart/conda-init.sh
 source $HOME/.cfg/scripts/tstart/sdkman.sh
