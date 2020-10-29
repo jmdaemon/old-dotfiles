@@ -82,7 +82,6 @@ ALIAS="$HOME/.cfg/scripts/aliases"
 
 source $ALIAS/shared.sh
 source $ALIAS/nvidia.sh
-source $ALIAS/pacman.sh
 source $ALIAS/school.sh
 source $HOME/.cfg/scripts/tstart/fortunecow.sh
 
