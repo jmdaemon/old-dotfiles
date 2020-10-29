@@ -17,7 +17,10 @@ HISTFILE=$HOME/.history/zsh/arch-laptop/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-fpath=(~/config/.zsh/completion $fpath)
+
+fpath=( ~/config/.zsh/completion $fpath ~/.cfg/scripts/completion )
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 #autoload -Uz compinit && compinit -i
 autoload -Uz compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 

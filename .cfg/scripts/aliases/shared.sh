@@ -22,6 +22,9 @@ alias xclip='xclip -selection c'
 # Git Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+#__git_complete cfg _git
+#__git_complete config _git
+
 
 cfgm () { 
     msg=$1
