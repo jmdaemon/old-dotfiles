@@ -77,6 +77,7 @@ export GNUPGHOME=$CFG/.gnupg
 #export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 #export LIBVIRT_DEFAULT_URI='qemu:///system'
 
+export EDITOR=nvim
 ALIAS="$HOME/.cfg/scripts/aliases"
 
 source $ALIAS/shared.sh
