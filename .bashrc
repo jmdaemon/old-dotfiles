@@ -116,7 +116,6 @@ fi
 # Added manually by jmd
 # export PATH="/home/jmd/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
 #export PATH="$HOME/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
-source $HOME/.cfg/scripts/tstart/hidpi.sh
 source $HOME/.profile
 source $HOME/.cfg/scripts/tstart/sdkman.sh
 

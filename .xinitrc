@@ -5,7 +5,6 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 xrdb -merge ~/.Xresources
-xrandr --dpi 240
 
 rofi &
 mpd &

@@ -98,7 +98,6 @@ source $ZSH/oh-my-zsh.sh
 #
 
 source $HOME/.cfg/scripts/aliases/aliases.zsh
-source $HOME/.cfg/scripts/tstart/hidpi.sh
 source $HOME/.profile
 source $HOME/.cfg/scripts/tstart/conda-init.sh
 source $HOME/.cfg/scripts/tstart/sdkman.sh
