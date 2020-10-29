@@ -49,7 +49,7 @@ alias gdev="cd $HOME/git/fastai_dev/"
 alias gdocs="cd $HOME/git/fastai_docs/"
 alias gcv="cd $HOME/git/course-v3"
 alias gfast="cd $HOME/git/fastprogress"
-alias mls="source ./cfg/scripts/ml.zsh"
+alias mls="source $HOME/.cfg/scripts/ml.zsh"
 
 alias gts="cd $HOME/workspace/School/" 
 alias gtws="cd $HOME/workspace"
