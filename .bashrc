@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTFILE=$HOME/.history/bash/ubuntu-workstation/.bash_history
+export HISTFILE=$HOME/.history/bash/arch-laptop/.bash_history
 HISTSIZE=10000
 HISTFILESIZE=20000
 
@@ -113,63 +113,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Aliases
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
-
-# Config
-alias config='/usr/bin/git --git-dir=/home/jmd/.cfg/ --work-tree=/home/jmd'
-
-# GitHub wrapper for Git - https://hub.github.com/
-#alias git=hub
-#alias gpr='git pull-request -m "$(git log -1 --pretty=%B)"'
-#clonefork() {
-#hub clone "$1"
-#cd "${1##*/}"
-#hub fork
-#}
-
 # Added manually by jmd
 # export PATH="/home/jmd/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
-export PATH="$HOME/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
-
-if [ "$HOST" = Laptop ]; then
-    export GDK_SCALE=2
-    export GDK_DPI_SCALE=0.5
-elif [ "$HOST" = PC ]; then
-    export GDK_SCALE=1
-    export GDK_DPI_SCALE=1
-fi
-    
-# Manually Launch Zsh
-# if [ -t 1 ]; then
-# exec zsh
-# fi
-
-__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-conda config --set auto_activate_base False
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+#export PATH="$HOME/anaconda3/bin:$PATH:$HOME/npm/bin:/usr/games"
+source $HOME/.cfg/scripts/tstart/hidpi.sh
+source $HOME/.profile
+source $HOME/.cfg/scripts/tstart/sdkman.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+#export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

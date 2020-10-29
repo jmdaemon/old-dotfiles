@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/jmd/.config/dotfiles/backgrounds/DpvywNN.jpg' 
+feh --no-fehbg --bg-fill "$HOME/backgrounds/Flat Colors/DpvywNN.jpg" 
