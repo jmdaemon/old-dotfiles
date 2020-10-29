@@ -36,15 +36,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'georgewfraser/java-language-server' Not compatible with ViM LSP
 "Plug 'mattn/vim-lsp-settings'
 "Language Server
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'autozimu/LanguageClient-neovim', {
+    "\ 'branch': 'next',
+    "\ 'do': 'bash install.sh',
+    "\ }
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neomake/neomake'
-Plug 'jiangmiao/auto-pairs'
+Plug 'Scuilion/gradle-syntastic-plugin'
+Plug 'jiangmiao/auto-pairs', { 'on': [] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
@@ -53,8 +54,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'numkil/ag.nvim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround', { 'on': [] }
+Plug 'tpope/vim-repeat', { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'habamax/vim-asciidoctor'
 Plug 'tpope/vim-dispatch'
@@ -439,4 +440,18 @@ nmap <leader>m :call LanguageClient_contextMenu()<CR>
 
 let g:syntastic_java_checkers=['java']
 let g:syntastic_java_javac_config_file_enabled = 1
-let g:syntastic_java__checkstyle_classpath="$CLASSPATH"
+"let g:syntastic_java__checkstyle_classpath="$CLASSPATH"
+"let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
+
+"function! FindConfig(prefix, what, where)
+    "let cfg = findfile(a:what, escape(a:where, ' ') . ';')
+    "return cfg !=# '' ? ' ' . a:prefix . ' ' . shellescape(cfg) : ''
+"endfunction
+
+"autocmd FileType javascript let b:syntastic_javascript_jscs_args =
+    "\ get(g:, 'syntastic_javascript_jscs_args', '') .
+    "\ FindConfig('-c', '.jscsrc', expand('<afile>:p:h', 1))
+
+
+" Ag.Nvim
+let g:ag_working_path_mode="r"
