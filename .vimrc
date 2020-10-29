@@ -18,7 +18,8 @@ endif
 "endif 
 " Vundle Plugin
 " Plug 'VundleVim/Vundle.vim'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " call plug#begin('~/.config/nvim/init.vim')
 
 
@@ -29,30 +30,43 @@ call plug#begin('~/.vim/plugged')
 "    endif
 "endfunction
 " # NeoViM Plugins
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'prabirshrestha/vim-lsp'
+" Plug 'natebosch/vim-lsc'
+"Plug 'georgewfraser/java-language-server' Not compatible with ViM LSP
+"Plug 'mattn/vim-lsp-settings'
+"Language Server
+"Plug 'autozimu/LanguageClient-neovim', {
+    "\ 'branch': 'next',
+    "\ 'do': 'bash install.sh',
+    "\ }
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neomake/neomake'
+Plug 'Scuilion/gradle-syntastic-plugin'
+Plug 'jiangmiao/auto-pairs', { 'on': [] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'py' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'numkil/ag.nvim'
-" Plug 'altercation/solarized'
-" Plug 'altercation/vim-colors-solarized'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-surround', { 'on': [] }
+Plug 'tpope/vim-repeat', { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'habamax/vim-asciidoctor'
+Plug 'tpope/vim-dispatch'
+"Plug 'SirVer/ultisnips'   " Track the engine.
+"Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them: 
 Plug 'lervag/vimtex'
 Plug 'gruvbox-community/gruvbox'
 Plug 'chrisbra/unicode.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tomasr/molokai'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'jph00/swift-apple', { 'for': 'swift' }
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-indentwise'
@@ -264,6 +278,7 @@ au BufNewFile,BufRead *.h set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119
 au BufNewFile,BufRead *.hpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.tex set syntax=tex
 au BufNewFile,BufRead *.cls set syntax=tex
+au BufNewFile,BufRead *.java set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 setlocal foldmethod=expr
 
 au BufNewFile,BufRead *ts,*.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2
@@ -273,6 +288,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "=================Misc================="
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType java setlocal foldmethod=syntax
 
 "======= ViM-LaTeX-Live-Preview ======="
 let g:livepreview_previewer = 'okular'
@@ -301,3 +317,141 @@ let g:vimtex_view_general_options_latexmk = '--unique'
 
 " MarkdownPreview
 let g:mkdp_auto_start = 1
+
+" Vimtex
+let g:tex_flavor = 'latex'
+
+" AsciiDoctor
+let g:asciidoctor_executable = 'asciidoctor -b html5' " What to use for HTML, default `asciidoctor`.
+let g:asciidoctor_extensions = ['asciidoctor-diagram', 'asciidoctor-rouge' ] " What extensions to use for HTML, default `[]`.
+"let g:asciidoctor_executable = 'asciidoctor-latex -b html' " What to use for HTML, default `asciidoctor`.
+"let g:asciidoctor_extensions = ['asciidoctor-diagram', 'asciidoctor-rouge', 'asciidoctor-latex' ] " What extensions to use for HTML, default `[]`.
+
+""" AsciiDoctor PDF
+let g:asciidoctor_pdf_executable = 'asciidoctor-pdf' " What to use for PDF, default `asciidoctor-pdf`.
+let g:asciidoctor_pdf_extensions = ['asciidoctor-diagram'] " What extensions to use for PDF, default `[]`.
+
+""" Folding
+"let g:asciidoctor_folding = 1 " Fold sections, default `0`.
+"let g:asciidoctor_fold_options = 1 " Fold options, default `0`.
+let g:asciidoctor_folding = 0 " Fold sections, default `0`.
+let g:asciidoctor_fold_options = 0 " Fold options, default `0`.
+
+""" Syntax 
+" Conceal *bold*, _italic_, `code` and urls in lists and paragraphs, default `0`.
+" See limitations in end of the README
+let g:asciidoctor_syntax_conceal = 1
+
+" Highlight indented text, default `1`.
+let g:asciidoctor_syntax_indented = 0
+
+""" Syntax Highlighting
+" List of filetypes to highlight, default `[]`
+let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript']
+
+""" Function mappings
+" Function to create buffer local mappings and add default compiler
+fun! AsciidoctorMappings()
+    nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
+    nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
+    nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
+    nnoremap <buffer> <leader>ox :AsciidoctorOpenDOCX<CR>
+    nnoremap <buffer> <leader>ch :Asciidoctor2HTML<CR>
+    nnoremap <buffer> <leader>cp :Asciidoctor2PDF<CR>
+    nnoremap <buffer> <leader>cx :Asciidoctor2DOCX<CR>
+    nnoremap <buffer> <leader>p :AsciidoctorPasteImage<CR>
+    " :make will build pdfs
+    compiler asciidoctor2pdf
+endfun
+
+" Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
+augroup asciidoctor
+    au!
+    au BufEnter *.adoc,*.asciidoc call AsciidoctorMappings()
+augroup END
+
+func! ConvertAsciidoctorToHTML()
+    " Text file with asciidoctor contents?
+    if &filetype == 'text' && getline(1) =~ '^= .*$'
+        " text files have no asciidoctor commands
+        set filetype=asciidoctor
+        Asciidoctor2HTML
+        set filetype=text
+    elseif &filetype == 'asciidoctor'
+        Asciidoctor2HTML
+    endif
+endfunc
+augroup ON_ASCIIDOCTOR_SAVE | au!
+    au BufWritePost *.adoc,*.txt call ConvertAsciidoctorToHTML()
+augroup end
+
+
+" ViM LSP
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ 'java': ['~/.local/share/lsp/java-language-server/dist/lang_server_linux.sh'],
+    \ }
+
+"let g:lsc_server_commands = {'java': '<path-to-java-language-server>/java-language-server/dist/lang_server_{linux|mac|windows}.sh'}
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+nmap <F5> <Plug>(lcn-menu)
+" Or map each action separately
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+nmap <leader>cmp <Plug>(lcn-implementation)
+"nmap <leader>cmp <Plug>(lcn-implementation)
+nmap <leader>m :call LanguageClient_contextMenu()<CR>
+
+let g:syntastic_java_checkers=['java']
+let g:syntastic_java_javac_config_file_enabled = 1
+"let g:syntastic_java__checkstyle_classpath="$CLASSPATH"
+"let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
+
+"function! FindConfig(prefix, what, where)
+    "let cfg = findfile(a:what, escape(a:where, ' ') . ';')
+    "return cfg !=# '' ? ' ' . a:prefix . ' ' . shellescape(cfg) : ''
+"endfunction
+
+"autocmd FileType javascript let b:syntastic_javascript_jscs_args =
+    "\ get(g:, 'syntastic_javascript_jscs_args', '') .
+    "\ FindConfig('-c', '.jscsrc', expand('<afile>:p:h', 1))
+
+
+" Ag.Nvim
+let g:ag_working_path_mode="r"
