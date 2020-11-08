@@ -63,6 +63,11 @@ call plug#end()
     let g:syntastic_check_on_wq = 0
     let g:syntastic_java_checker = ['javac']
 
+    let g:syntastic_java_checkers=['java']
+    let g:syntastic_java_javac_config_file_enabled = 1
+    "let g:syntastic_java__checkstyle_classpath="$CLASSPATH"
+    "let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
+
 "================== Theme =================" 
     syntax enable
     if filereadable(expand("~/.vimrc_background"))
@@ -162,44 +167,40 @@ call plug#end()
 "=============== Vim Airline =============="
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-else
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.maxlinenr = '㏑'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
-    let g:airline_symbols.spell = 'Ꞩ'
-    let g:airline_symbols.notexists = 'Ɇ'
-    let g:airline_symbols.whitespace = 'Ξ'
+"if !exists('g:airline_symbols')
+    "let g:airline_symbols = {}
+"else
+    "let g:airline_left_sep = '»'
+    "let g:airline_left_sep = '▶'
+    "let g:airline_right_sep = '«'
+    "let g:airline_right_sep = '◀'
+    "let g:airline_symbols.crypt = '🔒'
+    "let g:airline_symbols.linenr = '☰'
+    "let g:airline_symbols.linenr = '␊'
+    "let g:airline_symbols.linenr = '␤'
+    "let g:airline_symbols.linenr = '¶'
+    "let g:airline_symbols.maxlinenr = ''
+    "let g:airline_symbols.maxlinenr = '㏑'
+    "let g:airline_symbols.branch = '⎇'
+    "let g:airline_symbols.paste = 'ρ'
+    "let g:airline_symbols.paste = 'Þ'
+    "let g:airline_symbols.paste = '∥'
+    "let g:airline_symbols.spell = 'Ꞩ'
+    "let g:airline_symbols.notexists = 'Ɇ'
+    "let g:airline_symbols.whitespace = 'Ξ'
 
-    "=== Powerline Symbols ==="
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_theme='hybrid'
-    let g:bufferline_show_bufnr = 0
-endif
-
-"============= YCM Config ============="
-" let g:ycm_global_ycm_extra_conf = \"~/.vim/bundle/ycmd/.ycm_extra_conf.py"
-let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/ycmd/.ycm_extra_conf.py"
+    ""=== Powerline Symbols ==="
+    "let g:airline_left_sep = ''
+    "let g:airline_left_alt_sep = ''
+    "let g:airline_right_sep = ''
+    "let g:airline_right_alt_sep = ''
+    "let g:airline_symbols.branch = ''
+    "let g:airline_symbols.readonly = ''
+    "let g:airline_symbols.linenr = '☰'
+    "let g:airline_symbols.maxlinenr = ''
+    "let g:airline_theme='hybrid'
+    "let g:bufferline_show_bufnr = 0
+"endif
 
 "============ Format  ============"
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent fileformat=unix listchars=tab:>-
@@ -214,10 +215,6 @@ setlocal foldmethod=expr
 
 au BufNewFile,BufRead *ts,*.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-" This is used for detecting characters --> set list
-" set listchars=tab:>-
-
-"=================Misc================="
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType java setlocal foldmethod=syntax
 
@@ -252,7 +249,7 @@ let g:mkdp_auto_start = 1
 " Vimtex
 let g:tex_flavor = 'latex'
 
-" AsciiDoctor
+" ============== AsciiDoctor ============== 
 let g:asciidoctor_executable = 'asciidoctor -b html5' " What to use for HTML, default `asciidoctor`.
 let g:asciidoctor_extensions = ['asciidoctor-diagram', 'asciidoctor-rouge' ] " What extensions to use for HTML, default `[]`.
 "let g:asciidoctor_executable = 'asciidoctor-latex -b html' " What to use for HTML, default `asciidoctor`.
@@ -369,10 +366,7 @@ nmap <leader>cmp <Plug>(lcn-implementation)
 "nmap <leader>cmp <Plug>(lcn-implementation)
 nmap <leader>m :call LanguageClient_contextMenu()<CR>
 
-let g:syntastic_java_checkers=['java']
-let g:syntastic_java_javac_config_file_enabled = 1
-"let g:syntastic_java__checkstyle_classpath="$CLASSPATH"
-"let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
+
 
 "function! FindConfig(prefix, what, where)
     "let cfg = findfile(a:what, escape(a:where, ' ') . ';')
