@@ -118,6 +118,7 @@ call plug#end()
 
 "================ Shortcuts ==============="
     let mapleader='\'
+    set pastetoggle=<F9>
     inoremap jk <esc>
     nnoremap <leader>ve :vsp ~/.vimrc<CR>
     nnoremap <leader>vs :source ~/.vimrc<CR>
@@ -147,7 +148,6 @@ call plug#end()
     " nnoremap <S-Tab> gT
     vnoremap <Space> zf
     nnoremap <leader>q 0i"<Esc>Ea"<Esc>
-    set pastetoggle=<F9>
 
 "================ NERDTree ================"
     nnoremap <leader>d :NERDTree<CR>
@@ -157,6 +157,10 @@ call plug#end()
 "=============== Vim Airline =============="
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:airline_theme="tomorrow"
+let g:airline#extensions#tmuxline#enabled = 1
+let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
 
 " Format
 setlocal foldmethod=expr
@@ -170,30 +174,13 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd BufEnter *.h :setlocal filetype=h 
 autocmd BufEnter *.hpp :setlocal filetype=hpp 
 
-"======= ViM-LaTeX-Live-Preview ======="
-let g:livepreview_previewer = 'okular'
-" let g:livepreview_engine = 'your_engine' . ' [options]'
-let g:livepreview_cursorhold_recompile = 1
-autocmd Filetype tex setl updatetime=1
-"========== Markdown Preview ==========="
-
-
-" Vim-Airline Themes to Note:
-let g:airline_theme="tomorrow"
-let g:airline#extensions#tmuxline#enabled = 1
-"let airline#extensions#tmuxline#snapshot_file = ~/config/dotfiles/src/themes/gruvbox-hard-dark-tmux.conf"
-let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
-" badwolf, badcat, light, powerlineish, etc.
-" Just check out the screenshots page for more
-" https://github.com/vim-airline/vim-airline/wiki/Screenshots
-" Or customize your own.
+"============ LaTeX & Markdown =============
 let g:vimtex_compiler_progname = 'nvr'
 "let g:Tex_ViewRule_pdf = 'okular'
 
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
-
 
 " MarkdownPreview
 let g:mkdp_auto_start = 1
