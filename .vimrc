@@ -361,17 +361,5 @@ nmap <leader>cmp <Plug>(lcn-implementation)
 "nmap <leader>cmp <Plug>(lcn-implementation)
 nmap <leader>m :call LanguageClient_contextMenu()<CR>
 
-
-
-"function! FindConfig(prefix, what, where)
-    "let cfg = findfile(a:what, escape(a:where, ' ') . ';')
-    "return cfg !=# '' ? ' ' . a:prefix . ' ' . shellescape(cfg) : ''
-"endfunction
-
-"autocmd FileType javascript let b:syntastic_javascript_jscs_args =
-    "\ get(g:, 'syntastic_javascript_jscs_args', '') .
-    "\ FindConfig('-c', '.jscsrc', expand('<afile>:p:h', 1))
-
-
 " Ag.Nvim
 let g:ag_working_path_mode="r"
