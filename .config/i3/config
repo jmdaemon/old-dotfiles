@@ -32,7 +32,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 #exec --no-startup-id emojione-picker
-exec --no-startup-id flameshot
+#exec --no-startup-id flameshot
 exec --no-startup-id udiskie -a -t -f thunar
 exec --no-startup-id fcitx -d
 exec --no-startup-id keepassxc Passwords.kdbx
@@ -79,7 +79,6 @@ bindsym $mod+Control+d exec i3_quickterm
 # bindsym Print exec xfce4-screenshooter -r -o 'metauploader -n -f'
 #bindsym Print exec xfce4-screenshooter -r -o 'xclip -selection clipboard -t image/png'
 #bindsym Print exec xfce4-screenshooter -r -o 'xclip -selection clipboard -t image/png' bindsym Print exec xfce4-screenshooter -r -o 'xclip -selection clipboard -t image/png' bindsym Print exec --no-startup-id xfce4-screenshooter
-
 
 # change focus
 #bindsym $mod+j focus left
@@ -205,6 +204,8 @@ mode "$mode_system" {
 bindsym $mod+Shift+s mode "$mode_system"
 
 bindsym Print exec flameshot full -p "$HOME/pictures/captures"
+
+#bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
