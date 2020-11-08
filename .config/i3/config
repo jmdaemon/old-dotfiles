@@ -29,23 +29,11 @@ bindsym $mod+Return exec --no-startup-id termite
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+# Start rofi
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show combi
 bindsym $mod+Control+d exec i3_quickterm
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-
-# Print screen
-# bindsym Print exec xfce4-screenshooter -r -o 'metauploader -n -f'
-#bindsym Print exec xfce4-screenshooter -r -o 'xclip -selection clipboard -t image/png'
-#bindsym Print exec xfce4-screenshooter -r -o 'xclip -selection clipboard -t image/png' bindsym Print exec xfce4-screenshooter -r -o 'xclip -selection clipboard -t image/png' bindsym Print exec --no-startup-id xfce4-screenshooter
-
-# change focus
 #bindsym $mod+j focus left
 #bindsym $mod+k focus down
 #bindsym $mod+l focus up
@@ -73,13 +61,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-#bindsym $mod+h split h
-bindsym $mod+n split h
-
-# split in vertical orientation
-#bindsym $mod+v split v
-bindsym $mod+m split v
+bindsym $mod+n split h # split in horizontal orientation
+bindsym $mod+m split v # split in vertical orientation
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -98,16 +81,7 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
-
-# switch themes
-#bindsym $mod+Shift+t exec metaswitcher set \
-#  $(metaswitcher set $(metaswitcher themes | rofi -dmenu -p "Select Theme:"))
-
 # Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -150,12 +124,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-
-#set $mode_system System (l)ock, (e) logout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff 
-set $mode_system System 
+set $mode_system System # System: (l)ock, (e) logout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff 
 mode "$mode_system" {
-    #bindsym l exec --no-startup-id i3lock, mode "default"
-    #bindsym l exec --no-startup-id betterlockscreen -l blur, mode "default"
     bindsym l exec --no-startup-id dm-tool lock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
@@ -167,25 +137,11 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-#bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+Shift+s mode "$mode_system"
 
 bindsym Print exec flameshot full -p "$HOME/pictures/captures"
 
-#bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        #bindsym j resize shrink width 10 px or 10 ppt
-        #bindsym k resize grow height 10 px or 10 ppt
-        #bindsym l resize shrink height 10 px or 10 ppt
-        #bindsym semicolon resize grow width 10 px or 10 ppt
+mode "resize" { # resize window (you can also use the mouse for that)
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
@@ -204,12 +160,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3status
-#}
 
 #--[ EXEC ]--#
 
