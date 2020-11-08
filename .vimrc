@@ -86,11 +86,6 @@ call plug#end()
     set expandtab
     set shiftwidth=4
 
-    " Spell checker
-    "set spell
-    "set spelllang=en_us
-    "set spelllang=en_ca
-
 "================ UI Config ==============="
     set number
     set showcmd
