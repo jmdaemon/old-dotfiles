@@ -162,50 +162,8 @@ call plug#end()
 "=============== Vim Airline =============="
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-"if !exists('g:airline_symbols')
-    "let g:airline_symbols = {}
-"else
-    "let g:airline_left_sep = '»'
-    "let g:airline_left_sep = '▶'
-    "let g:airline_right_sep = '«'
-    "let g:airline_right_sep = '◀'
-    "let g:airline_symbols.crypt = '🔒'
-    "let g:airline_symbols.linenr = '☰'
-    "let g:airline_symbols.linenr = '␊'
-    "let g:airline_symbols.linenr = '␤'
-    "let g:airline_symbols.linenr = '¶'
-    "let g:airline_symbols.maxlinenr = ''
-    "let g:airline_symbols.maxlinenr = '㏑'
-    "let g:airline_symbols.branch = '⎇'
-    "let g:airline_symbols.paste = 'ρ'
-    "let g:airline_symbols.paste = 'Þ'
-    "let g:airline_symbols.paste = '∥'
-    "let g:airline_symbols.spell = 'Ꞩ'
-    "let g:airline_symbols.notexists = 'Ɇ'
-    "let g:airline_symbols.whitespace = 'Ξ'
 
-    ""=== Powerline Symbols ==="
-    "let g:airline_left_sep = ''
-    "let g:airline_left_alt_sep = ''
-    "let g:airline_right_sep = ''
-    "let g:airline_right_alt_sep = ''
-    "let g:airline_symbols.branch = ''
-    "let g:airline_symbols.readonly = ''
-    "let g:airline_symbols.linenr = '☰'
-    "let g:airline_symbols.maxlinenr = ''
-    "let g:airline_theme='hybrid'
-    "let g:bufferline_show_bufnr = 0
-"endif
-
-"============ Format  ============"
-"au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent fileformat=unix listchars=tab:>-
-"au BufNewFile,BufRead *.cpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-"au BufNewFile,BufRead *.c set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-"au BufNewFile,BufRead *.h set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-"au BufNewFile,BufRead *.hpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-"au BufNewFile,BufRead *.tex set syntax=tex
-"au BufNewFile,BufRead *.cls set syntax=tex
-"au BufNewFile,BufRead *.java set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
+" Format
 setlocal foldmethod=expr
 
 au BufNewFile,BufRead *ts,*.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2
@@ -216,8 +174,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " NeoVim defaults all .h, .hpp files to cpp
 autocmd BufEnter *.h :setlocal filetype=h 
 autocmd BufEnter *.hpp :setlocal filetype=hpp 
-
-
 
 "======= ViM-LaTeX-Live-Preview ======="
 let g:livepreview_previewer = 'okular'
