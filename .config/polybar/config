@@ -45,20 +45,14 @@ offset-x = 0
 offset-y = 0
 radius = 0.0
 fixed-center = true
-;tray-padding = 2
 tray-scale = 1.0
 tray-maxsize = 666
-;dpi=220
 dpi=240
-;dpi = -1
-;dpi = ${xrdb:Xft.dpi:-1}
 
 background = ${colors.top-background}
 foreground = ${colors.top-foreground}
 
 line-size = 0
-;line-color = #f00
-;line-color = #f00
 
 border-size = 0
 border-color = #00000000
@@ -71,9 +65,7 @@ module-margin-right = 2
 
 font-0 = Inconsolata Nerd Font:style=Bold:size=12;6
 
-;modules-left = i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-;modules-right = xbacklight pulseaudio xkeyboard wlan eth battery date powermenu
 modules-right = xbacklight pulseaudio xkeyboard wlan eth battery date 
 
 tray-position = left
@@ -81,78 +73,38 @@ tray-padding = 2
 tray-background = ${self.background}
 tray-detached = true
 
-;wm-restack = bspwm
 wm-restack = i3
 override-redirect = true
-
-;override-redirect = false
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/bottombar]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-;height = 35
 height = 40
-;height = 50
-;tray-scale = 1.0
-;tray-maxsize = 1000
-;height = 40
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
 offset-x = 0
 offset-y = 0
 fixed-center = true
 bottom = true
-;dpi=220
 dpi=240
-
-;background = ${colors.background}
-;foreground = ${colors.foreground}
-;background = ${colors.bottom-background}
-;foreground = ${colors.bottom-foreground}
 
 background = ${colors.bottom-background}
 foreground = ${colors.bottom-foreground}
 
-;foreground = ${colors.bottom-background}
-;background = ${colors.bottom-foreground}
-
-;line-size = 3
-#line-color = #f00
-#line-color = #ff
 line-size = 0
 
-;border-size = 4
-;border-color = #00000000
 border-size = 0
 border-color = #00000000
 
-#padding-left = 0
-#padding-right = 2
 padding-left = 5
 padding-right = 5
 
-;module-margin-left = 1
 module-margin-left = 2
 module-margin-right = 2
 
-;font-0 = Inconsolata Nerd Font:style=Bold:size=13;2
 font-0 = Inconsolata Nerd Font:style=Bold:size=12;0
-;modules-left = weather temperature 
 ;modules-left = openweathermap-detailed temperature 
 modules-left = weather
-;modules-left = temperature mpd
-;modules-right = mpd
 ;modules-right = mpd xkeyboard temperature filesystem memory cpu powermenu
 ;modules-right = filesystem memory cpu powermenu
 modules-center = i3
@@ -163,12 +115,8 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-;override-redirect = true
-;wm-restack = i3
 override-redirect = true
 wm-restack = i3
-
-
 
 [module/xwindow]
 type = internal/xwindow
@@ -178,11 +126,8 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-;format-prefix = " "
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-foreground = ${bar/bottombar.foreground}
-;format-prefix-foreground = ${colors.bottom-foreground}
+format-prefix-foreground = ${bar/bottombar.foreground}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
@@ -201,7 +146,6 @@ mount-0 = /
 
 label-mounted = " %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%"
 label-unmounted = %mountpoint% not mounted
-;label-unmounted-foreground = ${colors.foreground-alt}
 label-unmounted-foreground = ${bar/bottombar.foreground}
 
 [module/bspwm]
