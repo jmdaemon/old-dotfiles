@@ -27,7 +27,7 @@ XDG_DATA_HOME="$HOME/.local/share"
 XDG_CACHE_HOME="$HOME/.cache"
 
 # History 
-export GDBHISTFILE=$HOME/.history/gdb/arch-laptop/.gdb_history
+export GDBHISTFILE=$HOME/.history/gdb/ubuntu-workstation/.gdb_history
 
 # Languages
 export CARGO_HOME="$XDG_DATA_HOME"/cargo 
@@ -72,7 +72,7 @@ export PATH=$PATH:$SBIN:$NPM:$RUST:$GO:$LOCAL:$RVM
 
 
 OPENJDK_8=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64/
 
 export CFG=$HOME/.cfg/
 export WEECHAT_HOME=$CFG/.weechat/
