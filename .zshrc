@@ -13,7 +13,7 @@ export ZSH="$HOME/.oh-my-zsh"
 source $HOME/.cfg/scripts/tstart/base16.sh
 source $HOME/.cfg/scripts/tprompt/zsh/zprompt.zsh
 
-HISTFILE=$HOME/.history/zsh/arch-laptop/.zsh_history
+HISTFILE=$HOME/.history/zsh/ubuntu-workstation/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
