@@ -91,10 +91,8 @@ export EDITOR=nvim
 ALIAS="$HOME/.cfg/scripts/aliases" 
 source $ALIAS/shared.sh
 source $ALIAS/nvidia.sh
-source $ALIAS/pacman.sh
 source $ALIAS/school.sh
 source $HOME/.cfg/scripts/tstart/fortunecow.sh
-source $HOME/.cfg/scripts/init/init-nvm.sh
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
