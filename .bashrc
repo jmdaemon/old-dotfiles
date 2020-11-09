@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTFILE=$HOME/.history/bash/arch-laptop/.bash_history
+export HISTFILE=$HOME/.history/bash/ubuntu-workstation/.bash_history
 HISTSIZE=10000
 HISTFILESIZE=20000
 
