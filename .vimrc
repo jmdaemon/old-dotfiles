@@ -65,7 +65,6 @@ call plug#end()
 
     let g:syntastic_java_checkers=['java']
     let g:syntastic_java_javac_config_file_enabled = 1
-    "let g:syntastic_java__checkstyle_classpath="$CLASSPATH"
     "let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
 
 "================== Theme =================" 
@@ -125,14 +124,14 @@ call plug#end()
     nnoremap <leader>w :update<CR>
     nnoremap <leader>. :CtrlPTag<CR>
     nnoremap <leader>md :MarkdownPreview<CR>
+    nnoremap <leader>d :NERDTree<CR>
 
-    " Folding with <Space> toggles the fold
-    nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+    nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR> 
     nnoremap <leader>f :!`ctags -R -f ./.git/tags .`<CR>
     nnoremap <leader>tg :TagbarToggle <CR>
+
     " Bind \ q to toggle double quotes
     nnoremap <leader>q :cs"q <CR>
-    " let g:ConqueGdb_Leader = '\\'
     function! s:check_back_space() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~ '\s'
@@ -144,15 +143,11 @@ call plug#end()
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-    " nnoremap <Tab> gt
-    " nnoremap <S-Tab> gT
+
+    nnoremap <Tab> gt
+    nnoremap <S-Tab> gT
     vnoremap <Space> zf
     nnoremap <leader>q 0i"<Esc>Ea"<Esc>
-
-"================ NERDTree ================"
-    nnoremap <leader>d :NERDTree<CR>
-"    let g:NERDTreeDirArrowExpandable="+"
-"    let g:NERDTreeDirArrowCollapsible="~"
 
 "=============== Vim Airline =============="
 let g:airline#extensions#tabline#enabled = 1
@@ -162,13 +157,12 @@ let g:airline_theme="tomorrow"
 let g:airline#extensions#tmuxline#enabled = 1
 let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
 
-" Format
+" ================= Format =================
 setlocal foldmethod=expr
 
 au BufNewFile,BufRead *ts,*.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType java setlocal foldmethod=syntax
 
 " NeoVim defaults all .h, .hpp files to cpp
 autocmd BufEnter *.h :setlocal filetype=h 
@@ -176,8 +170,6 @@ autocmd BufEnter *.hpp :setlocal filetype=hpp
 
 "============ LaTeX & Markdown =============
 let g:vimtex_compiler_progname = 'nvr'
-"let g:Tex_ViewRule_pdf = 'okular'
-
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
@@ -304,6 +296,3 @@ nmap <silent> <F2> <Plug>(lcn-rename)
 nmap <leader>cmp <Plug>(lcn-implementation)
 "nmap <leader>cmp <Plug>(lcn-implementation)
 nmap <leader>m :call LanguageClient_contextMenu()<CR>
-
-" Ag.Nvim
-let g:ag_working_path_mode="r"
