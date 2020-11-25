@@ -171,13 +171,12 @@ exec_always --no-startup-id sh ~/.fehbg &
 exec --no-startup-id picom -bc --config ~/.config/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id mpd
-exec_always --no-startup-id syncthing
 exec_always $HOME/.config/polybar/launch.sh
 
 #--[ GAPS and BORDERS ]--#
 
-gaps inner 5
-gaps outer 10
+gaps inner 10
+gaps outer 15
 
 #smart_borders enable
 new_window none
