@@ -53,6 +53,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim' 
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
@@ -165,9 +166,8 @@ au BufNewFile,BufRead *ts,*.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwi
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-" NeoVim defaults all .h, .hpp files to cpp
-autocmd BufEnter *.h :setlocal filetype=h 
-autocmd BufEnter *.hpp :setlocal filetype=hpp 
+autocmd BufEnter *.h :setlocal filetype=c
+autocmd BufEnter *.hpp :setlocal filetype=cpp
 
 "============ LaTeX & Markdown =============
 let g:vimtex_compiler_progname = 'nvr'
