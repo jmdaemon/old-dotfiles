@@ -56,7 +56,9 @@ export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter 
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
-
+export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export XMONAD_CONFIG_HOME="XDG_CONFIG_HOME"/xmonad
 
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
