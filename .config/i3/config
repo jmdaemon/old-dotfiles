@@ -1,4 +1,4 @@
-# https://i3wm.org/docs/userguide.html 
+# https://i3wm.org/docs/userguide.html
 set $mod Mod4
 
 # Font for window titles.
@@ -7,7 +7,7 @@ font pango:DejaVu Sans Mono 8
 exec --no-startup-id nm-applet
 exec --no-startup-id udiskie -a -t -f thunar
 exec --no-startup-id fcitx -d
-exec --no-startup-id keepassxc ~/.cfg/Passwords/Passwords.kdbx
+#exec --no-startup-id keepassxc ~/.cfg/Passwords/Passwords.kdbx
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent # For Redshift
 
 # Use pactl to adjust volume in PulseAudio.
@@ -62,10 +62,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+n split h 
+bindsym $mod+n split h
 
 # split in vertical orientation
-bindsym $mod+m split v 
+bindsym $mod+m split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -128,35 +128,35 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 set $mode_system System
-mode "$mode_system" { # System: (l)ock, (e) logout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff 
+mode "$mode_system" { # System: (l)ock, (e) logout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
     bindsym l exec --no-startup-id dm-tool lock, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+        bindsym e exec --no-startup-id i3-msg exit, mode "default"
+        bindsym s exec --no-startup-id systemctl suspend, mode "default"
+        bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot, mode "default"
+        bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 bindsym $mod+Shift+s mode "$mode_system"
 
 bindsym Print exec flameshot full -p "$HOME/pictures/captures"
 
 mode "resize" { # resize window (you can also use the mouse for that)
-        bindsym h resize shrink width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+# same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+# back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -175,6 +175,7 @@ exec --no-startup-id mpd
 #exec --no-startup-id /usr/bin/blueman-applet
 exec --no-startup-id xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
 exec_always $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id keepassxc ~/.cfg/Passwords/Passwords.kdbx
 
 #--[ GAPS and BORDERS ]--#
 
@@ -192,4 +193,4 @@ client.unfocused        #333333   #222222   #888888   #222222   #333333
 client.urgent           #222222      #900000      #FFFFFF      #900000      #222222
 client.placeholder      #000000 #0C0C0C #FFFFFF #0C0C0C #000000
 
-client.background       #000000 
+client.background       #000000
