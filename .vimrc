@@ -15,9 +15,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'mattn/vim-lsp-settings'
 "Language Server
 "Plug 'autozimu/LanguageClient-neovim', {
-    "\ 'branch': 'next',
-    "\ 'do': 'bash install.sh',
-    "\ }
+            "\ 'branch': 'next',
+            "\ 'do': 'bash install.sh',
+            "\ }
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
@@ -38,7 +38,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'habamax/vim-asciidoctor'
 Plug 'tpope/vim-dispatch'
 "Plug 'SirVer/ultisnips'   " Track the engine.
-"Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them: 
+"Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
 Plug 'lervag/vimtex'
 Plug 'gruvbox-community/gruvbox'
 Plug 'chrisbra/unicode.vim'
@@ -52,106 +52,108 @@ Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'chriskempson/base16-vim'
-Plug 'edkolev/tmuxline.vim' 
+Plug 'edkolev/tmuxline.vim'
 Plug 'udalov/kotlin-vim'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
 "================ Syntastic ==============="
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    "let g:syntastic_java_checker = ['javac']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_java_checker = ['javac']
 
-    let g:syntastic_java_checkers=['java']
-    let g:syntastic_java_javac_config_file_enabled = 1
-    "let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
+let g:syntastic_java_checkers=['java']
+let g:syntastic_java_javac_config_file_enabled = 1
+"let g:syntastic_java__checkstyle_classpath="./syntactic_javac_config"
 
-    let g:syntastic_cpp_compiler_options = '-std=c++17x'
+let g:syntastic_cpp_compiler_options = '-std=c++17x'
+let g:syntastic_yaml_checkers = [ "yamllint" ]
 
-"================== Theme =================" 
-    syntax enable
-    if filereadable(expand("~/.vimrc_background"))
-        "let base16colorspace=256
-        "set background=dark
-        source ~/.vimrc_background
-    endif
+"================== Theme ================="
+syntax enable
+if filereadable(expand("~/.vimrc_background"))
+    "let base16colorspace=256
+    "set background=dark
+    source ~/.vimrc_background
+endif
 
-    "let g:gruvbox_contrast_dark="dark"
-    "let g:airline_theme='gruvbox'
-    "colorscheme gruvbox 
-    let g:gruvbox_italic=1
-    set background=dark
-    set termguicolors
-    set softtabstop=4
-    set expandtab
-    set shiftwidth=4
+"let g:gruvbox_contrast_dark="dark"
+"let g:airline_theme='gruvbox'
+"colorscheme gruvbox
+let g:gruvbox_italic=1
+set background=dark
+set termguicolors
+set softtabstop=4
+set expandtab
+set shiftwidth=4
 
 "================ UI Config ==============="
-    set number
-    set showcmd
-    set cursorline
-    filetype indent on
-    set showmatch
-    set laststatus=2
-    set autoread
-    set tags=./tags;,tags$HOME
-    set tags+=$HOME/anaconda3/envs/fastai/lib/python3.6/site-packages/torch/tags
-    set tags+=$HOME/anaconda3/envs/fastai/lib/python3.6/site-packages/torchvision/tags
+set number
+set showcmd
+set cursorline
+filetype indent on
+set showmatch
+set laststatus=2
+set autoread
+set tags=./tags;,tags$HOME
+set tags+=$HOME/anaconda3/envs/fastai/lib/python3.6/site-packages/torch/tags
+set tags+=$HOME/anaconda3/envs/fastai/lib/python3.6/site-packages/torchvision/tags
 
-    " Windows
-    " set tags+=$HOME/site-packages/torch/tags
-    " set tags+=$HOME/site-packages/torchvision/tags
+" Windows
+" set tags+=$HOME/site-packages/torch/tags
+" set tags+=$HOME/site-packages/torchvision/tags
 
 "================ Searching ==============="
-    set incsearch
-    set hlsearch
-    :hi Search ctermbg=3 ctermfg=8
+set incsearch
+set hlsearch
+:hi Search ctermbg=3 ctermfg=8
 
 "================ Movement ================"
-    set ttyfast
-    nnoremap B ^
-    nnoremap E $
-    set backspace=indent,eol,start
-    nnoremap <C-L> <C-W><C-L>
-    nnoremap <C-K> <C-W><C-K> nnoremap <C-J> <C-W><C-J>
-    nnoremap <C-H> <C-W><C-H>
+set ttyfast
+nnoremap B ^
+nnoremap E $
+set backspace=indent,eol,start
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-K> <C-W><C-K> nnoremap <C-J> <C-W><C-J>
+nnoremap <C-H> <C-W><C-H>
 
 "================ Shortcuts ==============="
-    let mapleader='\'
-    set pastetoggle=<F9>
-    inoremap jk <esc>
-    nnoremap <leader>ft :set ft?<CR>
-    nnoremap <leader>ve :vsp ~/.vimrc<CR>
-    nnoremap <leader>vs :source ~/.vimrc<CR>
-    nnoremap <leader>w :update<CR>
-    nnoremap <leader>. :CtrlPTag<CR>
-    nnoremap <leader>md :MarkdownPreview<CR>
-    nnoremap <leader>d :NERDTree<CR>
+let mapleader='\'
+set pastetoggle=<F9>
+inoremap jk <esc>
+nnoremap <leader>ft :set ft?<CR>
+nnoremap <leader>ve :vsp ~/.vimrc<CR>
+nnoremap <leader>vs :source ~/.vimrc<CR>
+nnoremap <leader>w :update<CR>
+nnoremap <leader>. :CtrlPTag<CR>
+nnoremap <leader>md :MarkdownPreview<CR>
+nnoremap <leader>d :NERDTree<CR>
 
-    nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR> 
-    nnoremap <leader>f :!`ctags -R -f ./.git/tags .`<CR>
-    nnoremap <leader>tg :TagbarToggle <CR>
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+nnoremap <leader>f :!`ctags -R -f ./.git/tags .`<CR>
+nnoremap <leader>tg :TagbarToggle <CR>
 
-    " Bind \ q to toggle double quotes
-    nnoremap <leader>q :cs"q <CR>
-    function! s:check_back_space() abort
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction
-    inoremap <silent><expr> <Tab>
-                \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<Tab>" :
-                \ coc#refresh()
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Bind \ q to toggle double quotes
+nnoremap <leader>q :cs"q <CR>
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-    nnoremap <Tab> gt
-    nnoremap <S-Tab> gT
-    vnoremap <Space> zf
-    nnoremap <leader>q 0i"<Esc>Ea"<Esc>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+vnoremap <Space> zf
+nnoremap <leader>q 0i"<Esc>Ea"<Esc>
 
 "=============== Vim Airline =============="
 let g:airline#extensions#tabline#enabled = 1
@@ -168,8 +170,11 @@ au BufNewFile,BufRead *ts,*.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwi
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-autocmd BufEnter *.h :setlocal filetype=c
+autocmd BufEnter *.h :setlocal filetype=cpp
 autocmd BufEnter *.hpp :setlocal filetype=cpp
+
+let g:formatterpath = [ "$HOME/.config/nvim/after/ftplugin/" ]
+au BufWrite * :Autoformat
 
 "============ LaTeX & Markdown =============
 let g:vimtex_compiler_progname = 'nvr'
@@ -183,7 +188,7 @@ let g:mkdp_auto_start = 1
 " Vimtex
 let g:tex_flavor = 'latex'
 
-" ============== AsciiDoctor ============== 
+" ============== AsciiDoctor ==============
 let g:asciidoctor_executable = 'asciidoctor -b html5' " What to use for HTML, default `asciidoctor`.
 let g:asciidoctor_extensions = ['asciidoctor-diagram', 'asciidoctor-rouge' ] " What extensions to use for HTML, default `[]`.
 "let g:asciidoctor_executable = 'asciidoctor-latex -b html' " What to use for HTML, default `asciidoctor`.
@@ -199,7 +204,7 @@ let g:asciidoctor_pdf_extensions = ['asciidoctor-diagram'] " What extensions to 
 let g:asciidoctor_folding = 0 " Fold sections, default `0`.
 let g:asciidoctor_fold_options = 0 " Fold options, default `0`.
 
-""" Syntax 
+""" Syntax
 " Conceal *bold*, _italic_, `code` and urls in lists and paragraphs, default `0`.
 " See limitations in end of the README
 let g:asciidoctor_syntax_conceal = 1
@@ -252,10 +257,10 @@ augroup end
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
+                \ 'name': 'pyls',
+                \ 'cmd': {server_info->['pyls']},
+                \ 'allowlist': ['python'],
+                \ })
 endif
 
 function! s:on_lsp_buffer_enabled() abort
@@ -270,7 +275,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    
+
     " refer to doc to add more commands
 endfunction
 
@@ -281,13 +286,13 @@ augroup lsp_install
 augroup END
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ 'java': ['~/.local/share/lsp/java-language-server/dist/lang_server_linux.sh'],
-    \ }
+            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+            \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+            \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+            \ 'python': ['/usr/local/bin/pyls'],
+            \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+            \ 'java': ['~/.local/share/lsp/java-language-server/dist/lang_server_linux.sh'],
+            \ }
 
 "let g:lsc_server_commands = {'java': '<path-to-java-language-server>/java-language-server/dist/lang_server_{linux|mac|windows}.sh'}
 " note that if you are using Plug mapping you should not use `noremap` mappings.
