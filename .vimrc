@@ -55,6 +55,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'udalov/kotlin-vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'vlime/vlime', {'rtp': 'vim/'}
 
 call plug#end()
 
@@ -172,9 +173,13 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 autocmd BufEnter *.h :setlocal filetype=cpp
 autocmd BufEnter *.hpp :setlocal filetype=cpp
+autocmd BufEnter *.tpp :setlocal filetype=cpp
 
 let g:formatterpath = [ "$HOME/.config/nvim/after/ftplugin/" ]
-au BufWrite * :Autoformat
+
+map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+"au BufWrite * :Autoformat
 
 "============ LaTeX & Markdown =============
 let g:vimtex_compiler_progname = 'nvr'
