@@ -177,8 +177,10 @@ autocmd BufEnter *.tpp :setlocal filetype=cpp
 
 let g:formatterpath = [ "$HOME/.config/nvim/after/ftplugin/" ]
 
-map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+"map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+"imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+map <C-K> :py3f /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 "au BufWrite * :Autoformat
 
 "============ LaTeX & Markdown =============
