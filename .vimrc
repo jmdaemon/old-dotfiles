@@ -19,6 +19,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
             "\ 'do': 'bash install.sh',
             "\ }
 
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neomake/neomake'
@@ -53,7 +54,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim'
-Plug 'udalov/kotlin-vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vlime/vlime', {'rtp': 'vim/'}
 
@@ -298,7 +298,7 @@ let g:LanguageClient_serverCommands = {
             \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
             \ 'python': ['/usr/local/bin/pyls'],
             \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-            \ 'java': ['~/.local/share/lsp/java-language-server/dist/lang_server_linux.sh'],
+            \ 'java': ['~/.local/share/lsp/java-language-server/dist/lang_server_linux.sh'], 
             \ }
 
 "let g:lsc_server_commands = {'java': '<path-to-java-language-server>/java-language-server/dist/lang_server_{linux|mac|windows}.sh'}
