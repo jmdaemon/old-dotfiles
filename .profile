@@ -74,7 +74,7 @@ export PATH=$PATH:$SBIN:$NPM:$RUST:$GO:$LOCAL:$RVM
 
 
 OPENJDK_8=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-15-openjdk
 
 export CFG=$HOME/.cfg/
 export WEECHAT_HOME=$CFG/.weechat/
