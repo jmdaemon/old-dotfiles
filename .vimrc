@@ -73,6 +73,8 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:syntastic_cpp_compiler_options = '-std=c++17x'
 let g:syntastic_yaml_checkers = [ "yamllint" ]
 
+let g:syntastic_c_compiler_options = '-std=C99'
+
 "================== Theme ================="
 syntax enable
 if filereadable(expand("~/.vimrc_background"))
