@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-DOTFILES="$HOME/.config/dotfiles/arch-laptop/.cfg"
+export DOTFILES="$HOME/.config/dotfiles"
 
 export ZDOTDIR=$DOTFILES/zsh
 # https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-593308026
@@ -11,8 +11,8 @@ ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-source $DOTFILES/scripts/tstart/base16.sh
-source $DOTFILES/scripts/tprompt/zprompt.zsh
+source $DOTFILES/scripts/terminal/base16.sh
+source $DOTFILES/scripts/terminal/prompt/zprompt.zsh
 #source $DOTFILES/scripts/tprompt/zsh/zprompt.zsh
 
 HISTFILE=$HOME/.history/zsh/arch-laptop/.zsh_history
@@ -109,9 +109,9 @@ source $ZSH/oh-my-zsh.sh
 #source $HOME/.cfg/scripts/tstart/sdkman.sh
 
 source $DOTFILES/scripts/aliases/aliases.zsh
-source $DOTFILES/scripts/tstart/hidpi.sh
-source $DOTFILES/scripts/tstart/conda-init.sh
-source $DOTFILES/scripts/tstart/sdkman.sh
+source $DOTFILES/scripts/terminal/hidpi.sh
+source $DOTFILES/scripts/terminal/conda-init.sh
+source $DOTFILES/scripts/terminal/sdkman.sh
 source $HOME/.profile
 
 # Persistent Tmux Sessions

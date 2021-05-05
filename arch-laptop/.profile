@@ -97,14 +97,16 @@ export GNUPGHOME=$CFG/.gnupg
 
 export EDITOR=nvim
 
-ALIAS="$HOME/.config/dotfiles/arch-laptop/.cfg/scripts/aliases" 
+#ALIAS="$HOME/.config/dotfiles/arch-laptop/.cfg/scripts/aliases" 
+CONFIG_HOME="$HOME/.config/dotfiles" 
+ALIAS="$CONFIG_HOME/scripts/aliases" 
 source $ALIAS/shared.sh
 source $ALIAS/nvidia.sh
 source $ALIAS/pacman.sh
 source $ALIAS/school.sh
 #source $HOME/.cfg/scripts/tstart/fortunecow.sh
 #source $HOME/.config/dotfiles/scripts/init/init-nvm.sh
-source $HOME/.config/dotfiles/arch-laptop/.cfg/scripts/init/init-nvm.sh
+source $CONFIG_HOME//scripts/init/init-nvm.sh
 
 #export GOPATH="$HOME/workspace/go_projects"
 #export GOBIN="$GOPATH/bin"
