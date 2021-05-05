@@ -1,0 +1,12 @@
+[user]
+	name = Joseph Diza
+	email = josephm.diza@gmail.com
+[push]
+	default = simple
+[init]
+	templatedir = ~/.git_template
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
