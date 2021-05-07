@@ -19,44 +19,45 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
             "\ 'do': 'bash install.sh',
             "\ }
 
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neomake/neomake'
 Plug 'Scuilion/gradle-syntastic-plugin'
-Plug 'jiangmiao/auto-pairs', { 'on': [] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
-Plug 'vim-scripts/indentpython.vim', { 'for': 'py' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'numkil/ag.nvim'
+Plug 'jiangmiao/auto-pairs', { 'on': [] }
 Plug 'tpope/vim-surround', { 'on': [] }
-Plug 'tpope/vim-repeat', { 'on': [] }
+Plug 'tpope/vim-repeat' , { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'
-Plug 'habamax/vim-asciidoctor'
 Plug 'tpope/vim-dispatch'
 "Plug 'SirVer/ultisnips'   " Track the engine.
 "Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
-Plug 'lervag/vimtex'
 Plug 'gruvbox-community/gruvbox'
 Plug 'chrisbra/unicode.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tomasr/molokai'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'jph00/swift-apple', { 'for': 'swift' }
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-indentwise'
-Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vlime/vlime', {'rtp': 'vim/'}
 Plug 'lilydjwg/fcitx.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'md'] }
+Plug 'habamax/vim-asciidoctor'      , { 'for': ['adoc', 'asciidoc', 'asc'] }
+Plug 'lervag/vimtex'                , { 'for': 'tex' }
+Plug 'cespare/vim-toml'             , { 'for': 'toml'}
+Plug 'jph00/swift-apple'            , { 'for': 'swift' }
+Plug 'vim-scripts/indentpython.vim' , { 'for': 'py' }
+Plug 'leafgarland/typescript-vim'   , { 'for': 'ts' }
+Plug 'pangloss/vim-javascript'      , { 'for': 'js' }
+Plug 'MaxMEllon/vim-jsx-pretty'     , { 'for': 'jsx' }
 
 call plug#end()
 
