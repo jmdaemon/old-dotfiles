@@ -20,7 +20,6 @@ qemu-system-aarch64 \
     -no-reboot
 }
 
-
 start_jessie_vm() { 
     #qemu-system-arm \ 
         #-kernel "$VMS/qemu-rpi-kernel/$JESSIE_KERNEL" \ 
@@ -44,15 +43,14 @@ sudo qemu-system-arm \
 }
 
 show_usage() {
-    echo "Usage: rpi-vm.sh [code_name]"
+    echo "Usage: rpi-vm [code_name]"
     echo "      -j, --jessie     Launch raspbian jessie virtual machine"
     echo "      -b, --buster     Launch raspbian buster virtual machine"
     echo ""
 }
 
-if [[ -z $1 ]]
-  then
-      show_usage
+if [[ -z $1 ]];then 
+    show_usage
 elif [[ $1 == "-j" || $1 == "--jessie" ]]; then
     start_jessie_vm
 elif [[ $1 == "-b" || $1 == "--buster" ]]; then
