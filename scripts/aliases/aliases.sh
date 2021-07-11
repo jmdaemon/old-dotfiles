@@ -17,14 +17,8 @@ alias lt='ls --tree'
 #}
 
 # Shortcuts
-alias gtml="cd $HOME/workspace/ml/fastai"
-alias mls="source $HOME/.cfg/scripts/ml.zsh"
-alias mlss="source $HOME/.cfg/scripts/ml_ssh.zsh"
-
-alias gfonts="cd $XDG_DATA_HOME/fonts"
-
 alias nv='nvim'
 alias xclip='xclip -selection c' # X Server copy to clipboard
-
-alias gts="cd $HOME/workspace/School/" 
-alias gtw="cd $HOME/workspace"
+alias start_env="source $HOME/.config/dotfiles/scripts/startup/start-env.sh"
+alias pkgs="expac -H M '%m\t%n' | sort -h"
+alias conda-init="source $DOTFILES/scripts/terminal/conda-init.sh"

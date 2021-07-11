@@ -5,7 +5,7 @@ WALLPAPER=$HOME/Pictures/Backgrounds/mbjtwkC.png
 FONT=/boot/grub/fonts/DejaVuSansMono36.pf2
 DEFAULT_GRUB=/etc/default/grub
 
-make_bigger_font() {
+make_bigger_font() { 
     sudo grub2-mkfont -s 36 -o $FONT /usr/share/fonts/dejavu/DejaVuSansMono.ttf
 }
 
@@ -55,3 +55,4 @@ elif [[ $1 == "-a" || $1 == "--all" ]]; then
 else 
     show_usage
 fi
+sudo grub-mkconfig -o /boot/grub/grub.cfg

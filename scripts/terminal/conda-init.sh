@@ -1,6 +1,4 @@
 #!/bin/bash/
-
-## For conda installed in /opt/
 __conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
