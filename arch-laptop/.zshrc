@@ -79,6 +79,7 @@ export UPDATE_ZSH_DAYS=1
 plugins=( git gradle-completion )
 #plugins+=(gradle-completion)
 
+# Oh-My-Zsh is alright but we can be more powerful without using this also
 # Added in quick hack
 source $ZSH/oh-my-zsh.sh
 # User configuration
