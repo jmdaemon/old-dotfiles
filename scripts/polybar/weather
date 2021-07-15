@@ -1,0 +1,36 @@
+#!/usr/bin/python
+
+import urllib.request, json
+
+api='https://api.openweathermap.org/data/2.5'
+key='49b81f56a6ae912a0d7d55f8647afd94'
+city="6173331"
+units="metric"
+
+weather = eval(str(urllib.request.urlopen('{}/weather?appid={}&id={}&units={}'.format(api, key, city, units)).read())[2:-1])
+currWeather = weather['weather'][0]
+
+main = currWeather['main'] # Forecast
+description = currWeather['description']
+
+icon = ''
+if main == 'Drizzle':
+  icon = ' '
+elif main == 'Rain':
+  icon = ' '
+elif main == 'Thunderstorm':
+  icon = ' '
+elif main == 'Snow':
+  icon = ' '
+elif main == 'Mist':
+  icon = '  '
+elif main == 'Clear':
+  icon = ' '
+elif main == 'Clouds':
+  icon = ' '
+elif main == 'Haze':
+  icon = ' '
+
+info = description.capitalize()
+temp = int(float(weather['main']['temp']))
+print('%s %s, %i °C' % (icon, main, temp))

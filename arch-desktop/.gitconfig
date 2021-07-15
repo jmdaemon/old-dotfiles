@@ -1,0 +1,7 @@
+[user]
+	name = Joseph Diza
+	email = josephm.diza@gmail.com
+[push]
+	default = simple
+[init]
+	templatedir = ~/.git_template
