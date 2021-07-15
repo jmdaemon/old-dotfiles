@@ -22,3 +22,5 @@ alias xclip='xclip -selection c' # X Server copy to clipboard
 alias start_env="source $HOME/.config/dotfiles/scripts/startup/start-env.sh"
 alias pkgs="expac -H M '%m\t%n' | sort -h"
 alias conda-init="source $DOTFILES/scripts/terminal/conda-init.sh"
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+#alias npm-list=`ls -l $(npm root -g) | cut -d ' ' -f 12`
